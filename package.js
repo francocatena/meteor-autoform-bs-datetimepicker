@@ -1,7 +1,7 @@
 Package.describe({
   name: 'francocatena:autoform-bs-datetimepicker',
   summary: 'Custom bootstrap-datetimepicker input type for AutoForm',
-  version: '0.1.0',
+  version: '0.1.1',
   git: 'https://github.com/francocatena/meteor-autoform-bs-datetimepicker.git'
 })
 
