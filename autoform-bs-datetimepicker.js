@@ -9,11 +9,11 @@ AutoForm.addInputType('bootstrap-datetimepicker', {
 
   valueConverters: {
     string: function (val) {
-      return (val instanceof Date) ? AutoForm.Utility.dateToDateStringUTC(val) : val
+      return (val instanceof Date) ? AutoForm.Utility.dateToDateString(val) : val
     },
 
     stringArray: function (val) {
-      if (val instanceof Date) return [AutoForm.Utility.dateToDateStringUTC(val)]
+      if (val instanceof Date) return [AutoForm.Utility.dateToDateString(val)]
 
       return val
     },
