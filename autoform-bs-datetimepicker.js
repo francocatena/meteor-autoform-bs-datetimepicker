@@ -2,7 +2,8 @@ AutoForm.addInputType('bootstrap-datetimepicker', {
   template: 'afBootstrapDatetimePicker',
 
   valueOut: function () {
-    var val = this.datetimepicker('getUTCDate')
+    var val = this.data('DateTimePicker').getDate()
+
     return (val instanceof Date) ? val : this.val()
   },
 
@@ -57,25 +58,22 @@ Template.afBootstrapDatetimePicker.rendered = function () {
     var data = Template.currentData()
 
     // set field value
-    if (data.value instanceof Date)
-      $input.datetimepicker('setUTCDate', data.value);
-    else if (typeof data.value === 'string')
-      $input.datetimepicker('update', data.value)
+    $input.data('DateTimePicker').setDate(data.value)
 
     // set start date if there's a min in the schema
     if (data.min instanceof Date) {
       // datetimepicker plugin expects local Date object, so convert UTC Date object to local
-      var startDate = utcToLocal(data.min)
+      var minDate = utcToLocal(data.min)
 
-      $input.datetimepicker('setStartDate', startDate)
+      $input.data('DateTimePicker').setMinDate(minDate)
     }
 
     // set end date if there's a max in the schema
     if (data.max instanceof Date) {
       // datetimepicker plugin expects local Date object, so convert UTC Date object to local
-      var endDate = utcToLocal(data.max)
+      var maxDate = utcToLocal(data.max)
 
-      $input.datetimepicker('setEndDate', endDate)
+      $input.data('DateTimePicker').setMaxDate(maxDate)
     }
   })
 }
