@@ -1,7 +1,11 @@
-aldeed:autoform-bs-datepicker
+francocatena:autoform-bs-datetimepicker
 =========================
 
-An add-on Meteor package for [aldeed:autoform](https://github.com/aldeed/meteor-autoform). Provides a single custom input type, "bootstrap-datepicker", which renders an input using the [bootstrap-datepicker](http://bootstrap-datepicker.readthedocs.org/en/release/index.html) plugin.
+An add-on Meteor package for
+[aldeed:autoform](https://github.com/aldeed/meteor-autoform).
+Provides a single custom input type, "bootstrap-datetimepicker",
+which renders an input using the
+[bootstrap-datetimepicker](https://github.com/Eonasdan/bootstrap-datetimepicker) plugin
 
 ## Prerequisites
 
@@ -11,7 +15,7 @@ In a Meteor app directory, enter:
 
 ```
 $ meteor add mizzao:bootstrap-3
-$ meteor add rajit:bootstrap3-datepicker
+$ meteor add tsega:bootstrap3-datetimepicker
 $ meteor add aldeed:autoform
 ```
 
@@ -20,12 +24,12 @@ $ meteor add aldeed:autoform
 In a Meteor app directory, enter:
 
 ```
-$ meteor add aldeed:autoform-bs-datepicker
+$ meteor add francocatena:autoform-bs-datetimepicker
 ```
 
 ## Usage
 
-Specify "bootstrap-datepicker" for the `type` attribute of any input. This can be done in a number of ways:
+Specify "bootstrap-datetimepicker" for the `type` attribute of any input. This can be done in a number of ways:
 
 In the schema, which will then work with a `quickForm` or `afQuickFields`:
 
@@ -34,7 +38,7 @@ In the schema, which will then work with a `quickForm` or `afQuickFields`:
   date: {
     type: Date,
     autoform: {
-      type: "bootstrap-datepicker"
+      type: "bootstrap-datetimepicker"
     }
   }
 }
@@ -43,11 +47,11 @@ In the schema, which will then work with a `quickForm` or `afQuickFields`:
 Or on the `afFieldInput` component or any component that passes along attributes to `afFieldInput`:
 
 ```js
-{{> afQuickField name="typeTest" type="bootstrap-datepicker"}}
+{{> afQuickField name="typeTest" type="bootstrap-datetimepicker"}}
 
-{{> afFormGroup name="typeTest" type="bootstrap-datepicker"}}
+{{> afFormGroup name="typeTest" type="bootstrap-datetimepicker"}}
 
-{{> afFieldInput name="typeTest" type="bootstrap-datepicker"}}
+{{> afFieldInput name="typeTest" type="bootstrap-datetimepicker"}}
 ```
 
 This input type is intended to be used with `type: Date` schema keys, but it also works with other schema types. Here's a list:
@@ -57,7 +61,7 @@ This input type is intended to be used with `type: Date` schema keys, but it als
 * `Number`: Value is stored as the result of calling `getTime()` on the `Date` object (representing midnight in the UTC timezone on the morning of the selected date).
 * `Array`: If the schema expects an array of `Date` or `String` or `Number`, the value is converted to a one-item array and stored.
 
-To provide bootstrap-datepicker options, set a `datePickerOptions` attribute equal to a helper that returns the options object. Most of the `data-date` attributes that the plugin recognizes should also work.
+To provide bootstrap-datetimepicker options, set a `datetimePickerOptions` attribute equal to a helper that returns the options object. Most of the `data-date` attributes that the plugin recognizes should also work.
 
 ## Demo
 

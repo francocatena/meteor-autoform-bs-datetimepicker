@@ -1,16 +1,16 @@
 Package.describe({
-  name: 'aldeed:autoform-bs-datepicker',
-  summary: 'Custom bootstrap-datepicker input type for AutoForm',
-  version: '1.0.3',
-  git: 'https://github.com/aldeed/meteor-autoform-bs-datepicker.git'
-});
+  name: 'francocatena:autoform-bs-datetimepicker',
+  summary: 'Custom bootstrap-datetimepicker input type for AutoForm',
+  version: '0.1.0',
+  git: 'https://github.com/francocatena/meteor-autoform-bs-datetimepicker.git'
+})
 
-Package.onUse(function(api) {
-  api.use('templating@1.0.0');
-  api.use('blaze@2.0.0');
-  api.use('aldeed:autoform@4.0.0');
+Package.onUse(function (api) {
+  api.use('templating@1.0.0')
+  api.use('blaze@2.0.0')
+  api.use('aldeed:autoform@4.0.0')
   api.addFiles([
-    'autoform-bs-datepicker.html',
-    'autoform-bs-datepicker.js'
-  ], 'client');
-});
+    'autoform-bs-datetimepicker.html',
+    'autoform-bs-datetimepicker.js'
+  ], 'client')
+})
