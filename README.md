@@ -63,12 +63,6 @@ This input type is intended to be used with `type: Date` schema keys, but it als
 
 To provide bootstrap-datetimepicker options, set a `datetimePickerOptions` attribute equal to a helper that returns the options object. Most of the `data-date` attributes that the plugin recognizes should also work.
 
-## Demo
-
-[Live](http://autoform.meteor.com/types)
-
 ## Contributing
 
 Anyone is welcome to contribute. Fork, make your changes, and then submit a pull request.
-
-[![Support via Gittip](https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png)](https://www.gittip.com/aldeed/)
