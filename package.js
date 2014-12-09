@@ -9,7 +9,7 @@ Package.onUse(function (api) {
   api.use('templating@1.0.0')
   api.use('blaze@2.0.0')
   api.use('aldeed:autoform@4.0.0')
-  api.use('mrt:moment@2.8.1')
+  api.use('momentjs:moment@2.8.4')
 
   api.addFiles([
     'autoform-bs-datetimepicker.html',
