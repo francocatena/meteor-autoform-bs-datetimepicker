@@ -4,7 +4,9 @@ AutoForm.addInputType('bootstrap-datetimepicker', {
   valueOut: function () {
     var val = this.data('DateTimePicker').getDate()
 
-    return (val instanceof Date) ? val : new Date(val.utc())
+    if (val instanceof Date) return val
+
+    return val ? new Date(val.utc()) : ''
   },
 
   valueConverters: {
