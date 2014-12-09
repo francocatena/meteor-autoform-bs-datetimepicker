@@ -4,7 +4,7 @@ AutoForm.addInputType('bootstrap-datetimepicker', {
   valueOut: function () {
     var val = this.data('DateTimePicker').getDate()
 
-    return (val instanceof Date) ? val : this.val()
+    return (val instanceof Date) ? val : new Date(val)
   },
 
   valueConverters: {
@@ -47,14 +47,15 @@ Template.afBootstrapDatetimePicker.helpers({
 })
 
 Template.afBootstrapDatetimePicker.rendered = function () {
-  var $input = this.$('input')
-  var data   = this.data
+  var self    = this
+  var $input  = self.$('input')
+  var data    = self.data
 
   // instanciate datetimepicker
-  $input.datetimepicker(data.atts.datetimePickerOptions)
+  $input.datetimepicker()
 
   // set and reactively update values
-  this.autorun(function () {
+  self.autorun(function () {
     var data = Template.currentData()
 
     // set field value
