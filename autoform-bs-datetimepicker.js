@@ -4,16 +4,16 @@ AutoForm.addInputType('bootstrap-datetimepicker', {
   valueOut: function () {
     var val = this.data('DateTimePicker').getDate()
 
-    return (val instanceof Date) ? val : new Date(val)
+    return (val instanceof Date) ? val : new Date(val.utc())
   },
 
   valueConverters: {
     string: function (val) {
-      return (val instanceof Date) ? AutoForm.Utility.dateToDateString(val) : val
+      return (val instanceof Date) ? AutoForm.Utility.dateToDateStringUTC(val) : val
     },
 
     stringArray: function (val) {
-      if (val instanceof Date) return [AutoForm.Utility.dateToDateString(val)]
+      if (val instanceof Date) return [AutoForm.Utility.dateToDateStringUTC(val)]
 
       return val
     },
