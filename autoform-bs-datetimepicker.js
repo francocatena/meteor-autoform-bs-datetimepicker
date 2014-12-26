@@ -78,9 +78,8 @@ AutoForm.addInputType('bootstrap-datetimepicker', {
 
 Template.afBootstrapDateTimePicker.helpers({
   atts: function addFormControlAtts() {
-    var atts = _.clone(this.atts)
     // Add bootstrap class
-    atts = AutoForm.Utility.addClass(atts, 'form-control')
+    var atts = AutoForm.Utility.addClass(_.clone(this.atts), 'form-control')
 
     delete atts.dateTimePickerOptions
 
