@@ -115,3 +115,9 @@ Template.dpReplacement.replaces('afBootstrapDateTimePicker')
 ## Contributing
 
 Anyone is welcome to contribute. Fork, make your changes, and then submit a pull request.
+
+## Author
+
+This is a slightly modified version of `aldeed:autoform-bs-datetimepicker`,
+you should use his version, because is the author of some amazing packages and
+surely give better support than me =)
