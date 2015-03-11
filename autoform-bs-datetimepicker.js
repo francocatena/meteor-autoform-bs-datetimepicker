@@ -21,7 +21,7 @@ AutoForm.addInputType('bootstrap-datetimepicker', {
   },
 
   valueOut: function () {
-    var m = this.data('DateTimePicker') && this.data('DateTimePicker').getDate()
+    var m = this.data('DateTimePicker') && this.data('DateTimePicker').date()
 
     if (! m) return m
 
@@ -94,7 +94,7 @@ Template.afBootstrapDateTimePicker.rendered = function () {
 
   // To be able to properly detect a cleared field, the defaultDate,
   // which is "" by default, must be null instead. Otherwise we get
-  // the current datetime when we call getDate() on an empty field.
+  // the current datetime when we call date() on an empty field.
   if (!opts.defaultDate || opts.defaultDate === '') opts.defaultDate = null
 
   // instanciate datetimepicker
@@ -106,7 +106,7 @@ Template.afBootstrapDateTimePicker.rendered = function () {
     var dtp  = $input.data('DateTimePicker')
 
     // set field value
-    if (data.value instanceof Date) dtp.setDate(data.value)
+    if (data.value instanceof Date) dtp.date(data.value)
 
     // set start date if there's a min in the schema
     if (data.min instanceof Date) dtp.setMinDate(data.min)
